@@ -4,14 +4,14 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/gorilla/mux"
+	"github.com/nzoueidi/golang-web-template/assests"
 	"html/template"
 	"net/http"
 	"os"
 	"os/signal"
 	"sync"
 	"time"
-
-	"github.com/gorilla/mux"
 )
 
 // Templates
