@@ -16,6 +16,7 @@ import (
 	"strings"
 	"time"
 )
+
 type asset struct {
 	bytes []byte
 	info  os.FileInfo
@@ -119,38 +120,6 @@ func templatesNavigation_barHtml() (*asset, error) {
 	return a, nil
 }
 
-<html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Golang HTML Server</title>
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
-        <link rel="stylesheet" href="/static/style.css">
-        <link rel="stylesheet" href="/static/navigation_bar.css">
-    </head>
-    <body>
-        <div class="container">
-            {{.NavigationBar}}
-
-            <h1>Another View</h1>
-            <h2>- Content Goes Here -</h2>
-        </div>
-    </body>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-</html>`)
-
-
-
-
 var _staticNavigation_barCss = []byte(``)
 
 func staticNavigation_barCssBytes() ([]byte, error) {
@@ -186,10 +155,6 @@ func staticStyleCss() (*asset, error) {
 	a := &asset{bytes: bytes, info: info}
 	return a, nil
 }
-
-
-
-
 
 // Asset loads and returns the asset for the given name.
 // It returns an error if the asset could not be found or
@@ -243,10 +208,10 @@ func AssetNames() []string {
 
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
-	"templates/index.html": templatesIndexHtml,
+	"templates/index.html":          templatesIndexHtml,
 	"templates/navigation_bar.html": templatesNavigation_barHtml,
-	"static/navigation_bar.css": staticNavigation_barCss,
-	"static/style.css": staticStyleCss,
+	"static/navigation_bar.css":     staticNavigation_barCss,
+	"static/style.css":              staticStyleCss,
 }
 
 // AssetDir returns the file names below a certain
@@ -288,13 +253,14 @@ type bintree struct {
 	Func     func() (*asset, error)
 	Children map[string]*bintree
 }
+
 var _bintree = &bintree{nil, map[string]*bintree{
 	"static": &bintree{nil, map[string]*bintree{
 		"navigation_bar.css": &bintree{staticNavigation_barCss, map[string]*bintree{}},
-		"style.css": &bintree{staticStyleCss, map[string]*bintree{}},
+		"style.css":          &bintree{staticStyleCss, map[string]*bintree{}},
 	}},
 	"templates": &bintree{nil, map[string]*bintree{
-		"index.html": &bintree{templatesIndexHtml, map[string]*bintree{}},
+		"index.html":          &bintree{templatesIndexHtml, map[string]*bintree{}},
 		"navigation_bar.html": &bintree{templatesNavigation_barHtml, map[string]*bintree{}},
 	}},
 }}
@@ -345,4 +311,3 @@ func _filePath(dir, name string) string {
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
 }
-
