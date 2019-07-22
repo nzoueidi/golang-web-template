@@ -5,7 +5,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/gorilla/mux"
-	"github.com/nzoueidi/golang-web-template/assests"
+	"github.com/nzoueidi/golang-web-template/assets"
 	"html/template"
 	"net/http"
 	"os"
