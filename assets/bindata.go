@@ -68,7 +68,7 @@ var _templatesIndexHtml = []byte(`<!DOCTYPE html>
 
             <h1>License Finder</h1>
 		<br/> <br/>
-	<b> Repository name:</b> <input type="text" value="" name="repo-name"/><br/>
+	<b> Repository name: &nbsp;</b> <input type="text" value="" name="repo-name"><br/>
         </div>
     </body>
 
@@ -99,7 +99,7 @@ var _templatesNavigation_barHtml = []byte(`<!-- Navigation Bar -->
     <div class="container">
         <span class="navbar-brand">License Finder</span>
 	<br/> <br/>
-	<b> Repository name:</b> <input type="text" value="" name="repo-name"/><br/>
+	<b> Repository name:</b> <input type="text" value="" name="repo-name"><br/>
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a id="homeNav" class="nav-link" href="/">Home</a>
