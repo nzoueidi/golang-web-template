@@ -95,7 +95,7 @@ func templatesIndexHtml() (*asset, error) {
 var _templatesNavigation_barHtml = []byte(`<!-- Navigation Bar -->
 <nav class="navbar navbar-light bg-light">
     <div class="container">
-        <span class="navbar-brand">Brand</span>
+        <span class="navbar-brand">License Finder</span>
 
         <ul class="nav justify-content-end">
             <li class="nav-item">
