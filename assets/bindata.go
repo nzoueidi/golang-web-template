@@ -54,7 +54,7 @@ var _templatesIndexHtml = []byte(`<!DOCTYPE html>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Golang HTML Server</title>
+        <title>License Finder</title>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -63,13 +63,10 @@ var _templatesIndexHtml = []byte(`<!DOCTYPE html>
         <link rel="stylesheet" href="/static/navigation_bar.css">
     </head>
     <body>
-	<b> test </b>
         <div class="container">
             {{.NavigationBar}}
 
             <h1>License Finder</h1>
-		<br/> <br/>
-	<b> Repository name: &nbsp;</b> <input type="text" value="" name="repo-name"><br/>
         </div>
     </body>
 
