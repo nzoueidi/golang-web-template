@@ -67,6 +67,7 @@ var _templatesIndexHtml = []byte(`<!DOCTYPE html>
             {{.NavigationBar}}
 
             <h1>License Finder</h1>
+		 <b> Repository name:</b> <input type="text" value="" name="repo-name"><br/> &nbsp; <input type="submit" value="Get licenses">
         </div>
     </body>
 
