@@ -63,6 +63,7 @@ var _templatesIndexHtml = []byte(`<!DOCTYPE html>
         <link rel="stylesheet" href="/static/navigation_bar.css">
     </head>
     <body>
+	<b> test </b>
         <div class="container">
             {{.NavigationBar}}
 
