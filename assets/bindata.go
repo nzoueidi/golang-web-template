@@ -81,6 +81,52 @@ var _templatesIndexHtml = []byte(`<!DOCTYPE html>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </html>`)
 
+var _templatesReportHtml = []byte(`<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>License Finder</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="/static/navigation_bar.css">
+    </head>
+    <body>
+        <div class="container">
+            {{.NavigationBar}}
+
+            <h1>License Finder</h1>
+		{{ .name }}
+                <br/><br/>
+        </div>
+    </body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</html>`)
+
+func templatesReportHtmlBytes() ([]byte, error) {
+	retur, _templateReportHtml, nil
+}
+
+func templatesReportHtml() (*asset, error) {
+        bytes, err := templatesIndexReportBytes()
+        if err != nil {
+                return nil, err
+        }
+
+        info := bindataFileInfo{name: "templates/report.html", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+        a := &asset{bytes: bytes, info: info}
+        return a, nil
+}
+
 func templatesIndexHtmlBytes() ([]byte, error) {
 	return _templatesIndexHtml, nil
 }
@@ -213,6 +259,7 @@ func AssetNames() []string {
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
 	"templates/index.html":          templatesIndexHtml,
+	"templates/report.html":	templatesReportHtml,
 	"templates/navigation_bar.html": templatesNavigation_barHtml,
 	"static/navigation_bar.css":     staticNavigation_barCss,
 	"static/style.css":              staticStyleCss,
@@ -265,6 +312,7 @@ var _bintree = &bintree{nil, map[string]*bintree{
 	}},
 	"templates": &bintree{nil, map[string]*bintree{
 		"index.html":          &bintree{templatesIndexHtml, map[string]*bintree{}},
+		"report.html":		&bintree{templatesReportHtml, map[string]*bintree{}},
 		"navigation_bar.html": &bintree{templatesNavigation_barHtml, map[string]*bintree{}},
 	}},
 }}
