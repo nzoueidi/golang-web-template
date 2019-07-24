@@ -70,6 +70,8 @@ var _templatesIndexHtml = []byte(`<!DOCTYPE html>
 		<form action="/" method="get">
 		 <b> Repository name:</b> <input type="text" value="" name="repo-name"> &nbsp; &nbsp; <input type="submit" value="Get licenses">
 		</form>
+		<br/><br/>
+		{{.name}}
         </div>
     </body>
 
