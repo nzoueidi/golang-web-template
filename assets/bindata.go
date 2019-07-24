@@ -113,11 +113,11 @@ var _templatesReportHtml = []byte(`<!DOCTYPE html>
 </html>`)
 
 func templatesReportHtmlBytes() ([]byte, error) {
-	return _templateReportHtml, nil
+	return _templatesReportHtml, nil
 }
 
 func templatesReportHtml() (*asset, error) {
-	bytes, err := templatesIndexReportBytes()
+	bytes, err := templatesReportHtmlBytes()
 	if err != nil {
 		return nil, err
 	}
