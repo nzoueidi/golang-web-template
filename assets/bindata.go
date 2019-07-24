@@ -113,18 +113,18 @@ var _templatesReportHtml = []byte(`<!DOCTYPE html>
 </html>`)
 
 func templatesReportHtmlBytes() ([]byte, error) {
-	retur, _templateReportHtml, nil
+	return _templateReportHtml, nil
 }
 
 func templatesReportHtml() (*asset, error) {
-        bytes, err := templatesIndexReportBytes()
-        if err != nil {
-                return nil, err
-        }
+	bytes, err := templatesIndexReportBytes()
+	if err != nil {
+		return nil, err
+	}
 
-        info := bindataFileInfo{name: "templates/report.html", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
-        a := &asset{bytes: bytes, info: info}
-        return a, nil
+	info := bindataFileInfo{name: "templates/report.html", size: 0, mode: os.FileMode(0), modTime: time.Unix(0, 0)}
+	a := &asset{bytes: bytes, info: info}
+	return a, nil
 }
 
 func templatesIndexHtmlBytes() ([]byte, error) {
@@ -259,7 +259,7 @@ func AssetNames() []string {
 // _bindata is a table, holding each asset generator, mapped to its name.
 var _bindata = map[string]func() (*asset, error){
 	"templates/index.html":          templatesIndexHtml,
-	"templates/report.html":	templatesReportHtml,
+	"templates/report.html":         templatesReportHtml,
 	"templates/navigation_bar.html": templatesNavigation_barHtml,
 	"static/navigation_bar.css":     staticNavigation_barCss,
 	"static/style.css":              staticStyleCss,
@@ -312,7 +312,7 @@ var _bintree = &bintree{nil, map[string]*bintree{
 	}},
 	"templates": &bintree{nil, map[string]*bintree{
 		"index.html":          &bintree{templatesIndexHtml, map[string]*bintree{}},
-		"report.html":		&bintree{templatesReportHtml, map[string]*bintree{}},
+		"report.html":         &bintree{templatesReportHtml, map[string]*bintree{}},
 		"navigation_bar.html": &bintree{templatesNavigation_barHtml, map[string]*bintree{}},
 	}},
 }}
